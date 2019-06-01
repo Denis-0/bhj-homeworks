@@ -1,11 +1,9 @@
 "use strict"
 
-
-
 let count = 0;
-let count = document.getElementById("cookie");
+let countCookie = document.getElementById("cookie");
 let displayCount = document.getElementById("clicker__counter");
-count.onclick = function(){
+countCookie.onclick = function(){
   count++;
   displayCount.innerHTML = count;
 }

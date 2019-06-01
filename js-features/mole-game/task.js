@@ -2,7 +2,7 @@
 
 let dead = document.getElementById('dead');
 let lost = document.getElementById('lost');
-let hole = document.getElementByClassName('hole-game');
+let hole = document.getElementsByClassName('hole-game');
 
 for (let i = 0; i > hole.length; i++) {
 	hole[i].onclick = function () {

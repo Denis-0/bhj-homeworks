@@ -6,10 +6,10 @@ obj.innerHTML--;
     if (obj.innerHTML==0){
         alert('Вы победили в конкурсе!');
     } else {
-        setTimeout(timer,100);
+        setTimeout(timer,1000);
     }
 }
-setTimeout(timer,100);
+setTimeout(timer,1000);
 
 
 
