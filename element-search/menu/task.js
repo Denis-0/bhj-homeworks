@@ -1,31 +1,27 @@
-"use strict";
+"use strict"
 
-const mainMenu = document.querySelectorAll(`nav.header > ul.menu_main > li.menu__item > a.menu__link`);
-const menuSub = document.querySelectorAll(`nav.header ul.menu_sub`);
-
-mainMenu.item(1).onclick = function() {
-    menuSub.item(0).classList.toggle(`menu_active`);
-    menuSub.item(1).classList.remove(`menu_active`);
-    return false;
+var el = document.getElementsByClassName('menu__item');
+for(var i=0; i<el.length; i++) {
+	el[i].addEventListener("mouseenter", showSub, false);
+	el[i].addEventListener("mouseleave", hideSub, false);
 }
 
-mainMenu.item(2).onclick = function() {
-    menuSub.item(1).classList.toggle(`menu_active`);
-    menuSub.item(0).classList.remove(`menu_active`);
-    return false;
+function showSub(e) {
+	if(this.children.length>1) {
+		this.children[1].style.height = "auto";
+		this.children[1].style.overflow = "visible";
+		this.children[1].style.opacity = "1";
+	} else {
+		return false;
+	}
 }
 
-const mainMenuBottom = document.querySelectorAll(`nav.bottom > ul.menu_main > li.menu__item > a.menu__link`);
-const menuSubBottom = document.querySelectorAll(`nav.bottom ul.menu_sub`);
-
-mainMenuBottom.item(1).onclick = function() {
-    menuSubBottom.item(0).classList.toggle(`menu_active`);
-    menuSubBottom.item(1).classList.remove(`menu_active`);
-    return false;
-}
-
-mainMenuBottom.item(2).onclick = function() {
-    menuSubBottom.item(1).classList.toggle(`menu_active`);
-    menuSubBottom.item(0).classList.remove(`menu_active`);
-    return false;
+function hideSub(e) {
+	if(this.children.length>1) {
+		this.children[1].style.height = "0px";
+		this.children[1].style.overflow = "hidden";
+		this.children[1].style.opacity = "0";
+	} else {
+		return false;
+	}
 }
